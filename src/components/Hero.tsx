@@ -147,22 +147,22 @@ const Hero = () => {
             >
               <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-blue-50 text-blue-600 border border-blue-100 dark:bg-blue-900/30 dark:text-blue-300 dark:border-blue-800/50">
                 <span className="inline-block w-2 h-2 rounded-full bg-blue-500 mr-2"></span>
-                NEW: Automated License Inventory
+                LIMITED EARLY ACCESS
+                <br />
+                <span className="text-xs text-slate-600 dark:text-slate-400">Book it now and get it discounted.</span>
               </span>
             </motion.div>
             
             {/* Título con animaciones */}
             <div className="space-y-2 w-full">
               <motion.h1 
-                className="text-5xl md:text-6xl lg:text-7xl font-bold leading-none text-slate-900 dark:text-white w-full"
+                className="text-5xl md:text-6xl lg:text-6xl font-bold leading-none text-slate-900 dark:text-white w-full"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <div className="flex items-center justify-center gap-x-3 gap-y-1 w-full">
                   <motion.span 
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
                     className="text-slate-900 dark:text-white whitespace-nowrap"
                   >
                     Automate
@@ -182,9 +182,9 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                Intelligent tool that automates software + license approval and inventory.
+                IA tool that automates software + license approval and inventory
                 <br />
-                Reducing <span className="text-blue-600 dark:text-blue-400 font-medium">time, errors and costs</span>.
+                Reducing <span className="text-blue-600 dark:text-blue-400 font-medium">time, errors and costs.</span>
               </motion.p>
             </div>
             
@@ -229,25 +229,36 @@ const Hero = () => {
               </motion.div>
             </div>
 
-            {/* Powered by section */}
-            <div className="pt-12 opacity-70">
-              <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">Powered by:</p>
-              <div className="flex items-center justify-center gap-8">
-                <div className="h-8 flex items-center">
-                  <svg className="h-full w-auto text-slate-600 dark:text-slate-400" viewBox="0 0 272 92" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M115.75 46.75c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 33.98 81.24 24.57 93.5 24.57c12.26 0 22.25 9.41 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 38.77 80.99 46.75c0 7.98 5.79 13.44 12.51 13.44s12.51-5.46 12.51-13.44z" fill="currentColor"/>
-                    <path d="M163.75 46.75c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.77 9.99-22.18 22.25-22.18s22.25 9.41 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.98 5.79 13.44 12.51 13.44s12.51-5.46 12.51-13.44z" fill="currentColor"/>
-                    <path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="currentColor"/>
-                    <path d="M225 3v65h-9.5V3h9.5z" fill="currentColor"/>
-                    <path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="currentColor"/>
-                    <path d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35 0 53.89 0 34.91 0 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" fill="currentColor"/>
-                  </svg>
-                </div>
-                <div className="h-12 flex items-center">
+            {/* Trusted by section */}
+            <div className="pt-12">
+              <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">Trusted by:</p>
+              <div className="flex items-center justify-center gap-12">
+                <div className="h-20 flex items-center">
                   <img 
-                    src="https://images.squarespace-cdn.com/content/v1/62cd1f97bc798a438b38f99b/eba2516a-3355-43b2-bd76-0f0ca3686e6e/TETUAN+VALLEY_LOGO_darklandscape_transparentBG.png" 
+                    src="/images/google_for_startups.png"
+                    alt="Google for Startups"
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+                <div className="h-20 flex items-center">
+                  <img 
+                    src="/images/tetuan_valley.png" 
                     alt="Tetuan Valley"
-                    className="h-full w-auto object-contain brightness-0 opacity-60 dark:invert dark:opacity-40"
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+                <div className="h-16 flex items-center">
+                  <img 
+                    src="/images/incibe.png" 
+                    alt="Incibe"
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+                <div className="h-14 flex items-center">
+                  <img 
+                    src="/images/scrm_logo.png" 
+                    alt="SCRM_LIDL"
+                    className="h-full w-auto object-contain"
                   />
                 </div>
               </div>
