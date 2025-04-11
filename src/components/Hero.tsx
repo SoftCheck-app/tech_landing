@@ -237,28 +237,28 @@ const Hero = () => {
                   <img 
                     src="/images/google_for_startups.png"
                     alt="Google for Startups"
-                    className="h-full w-auto object-contain"
+                    className="h-full w-auto object-contain filter grayscale"
                   />
                 </div>
                 <div className="h-20 flex items-center">
                   <img 
                     src="/images/tetuan_valley.png" 
                     alt="Tetuan Valley"
-                    className="h-full w-auto object-contain"
+                    className="h-full w-auto object-contain filter grayscale"
                   />
                 </div>
                 <div className="h-16 flex items-center">
                   <img 
                     src="/images/incibe.png" 
                     alt="Incibe"
-                    className="h-full w-auto object-contain"
+                    className="h-full w-auto object-contain filter grayscale"
                   />
                 </div>
                 <div className="h-14 flex items-center">
                   <img 
                     src="/images/scrm_logo.png" 
                     alt="SCRM_LIDL"
-                    className="h-full w-auto object-contain"
+                    className="h-full w-auto object-contain filter grayscale"
                   />
                 </div>
               </div>
