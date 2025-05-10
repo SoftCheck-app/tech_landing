@@ -172,7 +172,7 @@ const Hero = () => {
                     transition={{ duration: 0.2 }}
                     className="text-blue-600 dark:text-blue-400 whitespace-nowrap"
                   >
-                    Software and License Inventory
+                    Software Asset Management
                   </motion.span>
                 </div>
               </motion.h1>
@@ -182,7 +182,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                IA tool that automates software + license approval and inventory
+                IA tool that automates software approval and management
                 <br />
                 Reducing <span className="text-blue-600 dark:text-blue-400 font-medium">time, errors and costs.</span>
               </motion.p>
