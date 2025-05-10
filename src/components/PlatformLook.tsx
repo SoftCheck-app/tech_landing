@@ -277,10 +277,10 @@ export const PlatformLook: React.FC = () => {
           viewport={{ once: true }}
         >
           <h2 className="heading-lg text-primary-800 dark:text-primary-300 mb-4">
-            Discover our platform from the inside
+            Interact with our Automated Software Asset Manager
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Explore our interactive platform and discover how to efficiently manage your organization's software and licenses.
+            Below you can interact with our SAM and see how it works.
           </p>
         </motion.div>
 

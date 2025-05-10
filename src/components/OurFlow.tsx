@@ -7,7 +7,7 @@ export const OurFlow: React.FC = () => {
   const steps = [
     {
       title: "Software Request",
-      description: "Employees request the software they need through the agent installed on their computer.",
+      description: "Employees try to install software on their computer.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
@@ -16,25 +16,26 @@ export const OurFlow: React.FC = () => {
     },
     {
       title: "Automatic Approval",
-      description: "Our AI approves requests based on company policies. For paid software, finance is notified for approval.",
+      description: "Our AI approves or rejects the requests based on security and company policies.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       )
     },
+
     {
-      title: "License Management",
-      description: "We automate the acquisition and assignment of software licenses, ensuring compliance and cost optimization.",
+      title: "Continuous Monitoring",
+      description: "Tracking of updates and software affected by vulnerabilities in our centralized platform.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       )
     },
     {
-      title: "Continuous Monitoring",
-      description: "Tracking of usage and automatic license renewal when needed. We also monitor software vulnerabilities and updates.",
+      title: "Full control made easy",
+      description: "Our platform is easy to use. You will have a dashboard to see the status of the software and the requests.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
