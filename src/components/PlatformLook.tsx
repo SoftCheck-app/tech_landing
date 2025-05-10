@@ -335,19 +335,6 @@ export const PlatformLook: React.FC = () => {
                     </svg>
                     Software Database
                   </motion.div>
-                  
-                  <motion.div 
-                    className={`mt-2 px-3 py-2 rounded-md flex items-center cursor-pointer ${activeSection === "license" ? "bg-cyan-800/30 text-cyan-400" : "text-gray-400 hover:bg-gray-800/30"}`}
-                    onClick={() => handleSectionChange("license")}
-                    whileHover={{ x: 5 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    License Database
-                  </motion.div>
-
                   <motion.div 
                     className={`mt-2 px-3 py-2 rounded-md flex items-center cursor-pointer ${activeSection === "employees" ? "bg-cyan-800/30 text-cyan-400" : "text-gray-400 hover:bg-gray-800/30"}`}
                     onClick={() => handleSectionChange("employees")}
@@ -980,9 +967,6 @@ export const PlatformLook: React.FC = () => {
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                          </svg>
                           Add Employee
                         </motion.button>
                       </div>
@@ -1128,9 +1112,9 @@ export const PlatformLook: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              Request a personalized demo
+              Request a trial
             </motion.button>
           </div>
         </div>
