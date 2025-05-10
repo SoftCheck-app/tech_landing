@@ -184,7 +184,7 @@ const Hero = () => {
               >
                 AI tool that automates software approval and versions management
                 <br />
-                Reducing <span className="text-blue-600 dark:text-blue-400 font-medium">time, errors and costs.</span>
+                reducing <span className="text-blue-600 dark:text-blue-400 font-medium">time, errors and friction with your employees.</span>
               </motion.p>
             </div>
             

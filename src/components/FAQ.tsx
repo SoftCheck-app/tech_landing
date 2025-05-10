@@ -69,24 +69,20 @@ const FAQ: React.FC = () => {
   
   const faqItems = [
     {
-      question: "How does SoftCheck optimize license costs for the finance department?",
-      answer: "SoftCheck identifies unutilized licenses and prevents unnecessary automatic renewals. Also awares your finance department when a new license is needed. Our clients typically reduce their license costs by 25-30% during the first year."
-    },
-    {
       question: "What specific benefits does it offer for IT departments?",
-      answer: "For IT, SoftCheck automates the software approval, implementation, and renewal processes, reducing administrative burden and allowing technical teams to focus on higher-value tasks. It also offers a centralized view of all corporate software, facilitating compliance with security policies."
+      answer: "For IT, SoftCheck automates the software approval and software inventory reducing administrative burden and allowing technical teams to focus on higher-value tasks. It also offers a centralized view of all corporate software, facilitating compliance with security policies."
     },
     {
       question: "How does it integrate with other systems?",
-      answer: "SoftCheck integrates with most ERP, Financial and Cybersecurity systems through APIs and preconfigured connectors." 
+      answer: "SoftCheck integrates with most Cybersecurity systems through APIs and preconfigured connectors." 
     },
     {
       question: "How long does it take to implement the solution?",
-      answer: "Basic implementation is usually completed in 2-4 weeks. For enterprise configurations with custom integrations, the estimated time is 4-8 weeks. Our team provides complete support throughout the process, including data migration, configuration, and training for all departments."
+      answer: "Basic implementation is usually completed in a week. For enterprise configurations with custom integrations, the estimated time is 2-3 weeks. Our team provides complete support throughout the process, including data migration, configuration, and training for all departments."
     },
     {
       question: "What level of customization does it offer for different departments?",
-      answer: "SoftCheck allows customization of workflows and approval policies."
+      answer: "Our Automated Software Asset Manager allows customization of workflows and approval policies."
     },
     {
       question: "How does SoftCheck help with regulatory?",
@@ -112,7 +108,7 @@ const FAQ: React.FC = () => {
             <span className="text-blue-600 dark:text-blue-400 ml-2">ASKED QUESTIONS</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            We answer your questions about how SoftCheck can optimize software and license management in your company.
+            We answer your questions on how we save you time and increase your employees' productivity.
           </p>
         </motion.div>
         

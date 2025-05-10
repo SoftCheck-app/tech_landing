@@ -83,7 +83,9 @@ const PricingCard = ({
                     <span className="text-slate-500 dark:text-slate-400 text-sm">*starting from</span>
                   )}
                   {period && (
-                    <span className="text-slate-500 dark:text-slate-400 text-sm">/{period}</span>
+                    <span className="text-slate-500 dark:text-slate-400 text-sm whitespace-pre-line">
+                      {price === 'Contact Us' ? period : `/${period}`}
+                    </span>
                   )}
                 </div>
               )}
@@ -148,14 +150,14 @@ const Pricing = () => {
   const plans: PricingPlan[] = [
 
     {
-      name: 'Software Inventory',
+      name: 'Small Company',
       price: '1,50€',
       period: 'month per employee',
       description: '',
       badge: '',
       starting: true,
       features: [
-        { title: 'Unlimited employees', included: true },
+        { title: '50 employees', included: true },
         { title: 'Automated software approval', included: true },
         { title: 'Automated software inventory', included: true },
         { title: 'Priority 24/7 support', included: true },
@@ -165,9 +167,9 @@ const Pricing = () => {
       delay: 2,
     },
     {
-      name: 'Software + License\nInventory',
+      name: 'Enterprise',
       price: 'Contact Us',
-      period: '',
+      period: 'Contact us to\nget a custom quote',
       description: '',
       badge: 'Recommended',
       starting: false,
@@ -178,8 +180,6 @@ const Pricing = () => {
         { title: 'Priority 24/7 support', included: true },
         { title: 'Custom dashboard', included: true },
         { title: 'Custom approval policies', included: true },
-        { title: 'Automated license management', included: true },
-        { title: 'ERP and Payments system integration', included: true },
       ],
       delay: 2,
     },

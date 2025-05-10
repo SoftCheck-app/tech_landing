@@ -67,7 +67,7 @@ const Advantages = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      title: "We're faster",
+      title: "Forget about tickets",
       description: "Our algorithms automate software requests, reducing response times from days to seconds.",
     },
     {
@@ -82,20 +82,11 @@ const Advantages = () => {
     {
       icon: (
         <svg className="w-7 h-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      title: "Total Integration",
-      description: "Connect our tool with your existing systems like Intelligence Platforms, Finance Platforms and more.",
-    },
-    {
-      icon: (
-        <svg className="w-7 h-7 text-cyan-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      title: "Cost Control",
-      description: "Monitor and optimize software license expenses, identifying saving opportunities and generating budget projections.",
+      title: "Security driven",
+      description: "We monitor all the software installed in the organization and we can detect any unauthorized software, outdated software and vulnerabilities.",
     },
     {
       icon: (
@@ -104,17 +95,26 @@ const Advantages = () => {
         </svg>
       ),
       title: "Unified Management",
-      description: "A single platform to manage all software requests, licenses, and renewals across the organization, tailored to each department.",
+      description: "A single platform to manage all software requests, updates, and patches.",
     },
     {
       icon: (
         <svg className="w-7 h-7 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
         </svg>
       ),
-      title: "Security",
-      description: "We monitor all the software installed in the organization and we can detect any unauthorized software, outdated software and vulnerabilities.",
+      title: "Total Integration",
+      description: "Connect our tool with your existing systems like Intelligence Platforms and more.",
     },
+    {
+      icon: (
+        <svg className="w-7 h-7 text-cyan-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      title: "Usage Control",
+      description: "Monitor the usage of the software by the employees and the resources it consumes.",
+    }
   ];
 
   return (
@@ -134,11 +134,11 @@ const Advantages = () => {
           className="text-center mb-16"
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            <span className="text-slate-800 dark:text-slate-200">CROSS-DEPARTMENTAL</span> 
-            <span className="text-blue-600 dark:text-blue-400 ml-2">ADVANTAGES</span>
+            <span className="text-slate-800 dark:text-slate-200">WHY WE ARE</span> 
+            <span className="text-blue-600 dark:text-blue-400 ml-2">BETTER?</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            SoftCheck combines the power of automation to transform software and license management across the organization, benefiting IT, Security and Finance.
+            We combine the power of automation and security to save you time, increase the productivity of your employees and reduce the friction with them.
           </p>
         </motion.div>
         
