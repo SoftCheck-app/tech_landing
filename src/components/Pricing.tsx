@@ -151,7 +151,7 @@ const Pricing = () => {
 
     {
       name: 'Small Company',
-      price: '1,50€',
+      price: '4,99€',
       period: 'month per employee',
       description: '',
       badge: '',
