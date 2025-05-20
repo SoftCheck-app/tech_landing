@@ -467,7 +467,7 @@ export const PlatformLook: React.FC = () => {
                           <div className="flex justify-between mb-2">
                             <div className="text-sm text-gray-600 dark:text-gray-400">Employees Hours Saved</div>
                           </div>
-                          <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">42 Hours</div>
+                          <div className="text-3xl font-bold text-green-500 mb-2">42 Hours</div>
                           <div className="flex justify-between items-center">
                             <div className="text-xs text-gray-600 dark:text-gray-400">
                               An average of:
