@@ -40,41 +40,46 @@ export const PlatformLook: React.FC = () => {
   // Datos para la sección de empleados
   const [employeesList, setEmployeesList] = useState([
     { 
-      name: "Ana Garcia", 
+      name: "Ana Garcia",
+      active: true, 
       software: [
-        { name: "Adobe Creative Cloud", version: "2023.4.0", licenseType: "Pro", cost: 59.99 },
-        { name: "Microsoft Office 365", version: "16.0.15330", licenseType: "Business", cost: 12.50 },
-        { name: "Maltego Community", version: "5.13.5", licenseType: "No license", cost: 0 }
+        { name: "Adobe Creative Cloud", version: "2023.4.0" },
+        { name: "Microsoft Office 365", version: "16.0.15330" },
+        { name: "Maltego Community", version: "5.13.5" }
       ]
     },
     { 
-      name: "Carlos Perez", 
+      name: "Carlos Perez",
+      active: true, 
       software: [
-        { name: "Adobe Creative Cloud", version: "2023.4.0", licenseType: "Pro", cost: 59.99 },
-        { name: "Slack", version: "4.29.149", licenseType: "Premium", cost: 8.75 },
-        { name: "Figma", version: "116.14.7", licenseType: "Pro", cost: 15.00 }
+        { name: "Adobe Creative Cloud", version: "2023.4.0" },
+        { name: "Slack", version: "4.29.149" },
+        { name: "Figma", version: "116.14.7" }
       ]
     },
     { 
-      name: "Diana Lopez", 
+      name: "Diana Lopez",
+      active: false, 
       software: [
-        { name: "Adobe Creative Cloud", version: "2023.4.0", licenseType: "Pro", cost: 59.99 },
-        { name: "Microsoft Office 365", version: "16.0.15330", licenseType: "Business", cost: 12.50 }
+        { name: "Adobe Creative Cloud", version: "2023.4.0" },
+        { name: "Microsoft Office 365", version: "16.0.15330" }
       ]
     },
     { 
-      name: "Alex Mora", 
+      name: "Alex Mora",
+      active: true, 
       software: [
-        { name: "Microsoft Office 365", version: "16.0.15330", licenseType: "Business", cost: 12.50 },
-        { name: "Slack", version: "4.29.149", licenseType: "Premium", cost: 8.75 }
+        { name: "Microsoft Office 365", version: "16.0.15330" },
+        { name: "Slack", version: "4.29.149" }
       ]
     },
     { 
-      name: "Hector Ramirez", 
+      name: "Hector Ramirez",
+      active: true, 
       software: [
-        { name: "Slack", version: "4.29.149", licenseType: "Premium", cost: 8.75 },
-        { name: "Microsoft Office 365", version: "16.0.15330", licenseType: "Business", cost: 12.50 },
-        { name: "Zoom", version: "5.13.5", licenseType: "Standard", cost: 14.99 }
+        { name: "Slack", version: "4.29.149" },
+        { name: "Microsoft Office 365", version: "16.0.15330" },
+        { name: "Zoom", version: "5.13.5" }
       ]
     }
   ]);
@@ -197,11 +202,6 @@ export const PlatformLook: React.FC = () => {
     setTooltipPosition(null);
   };
 
-  // Función para calcular el coste total de las licencias de un empleado
-  const calculateTotalCost = (software: any[]) => {
-    return software.reduce((total, sw) => total + sw.cost, 0).toFixed(2);
-  };
-
   // Función para manejar la expansión de filas en la sección de licencias
   const toggleLicenseRowExpansion = (index: number) => {
     if (expandedLicenseRow === index) {
@@ -216,9 +216,7 @@ export const PlatformLook: React.FC = () => {
     return employeesList.filter(employee => 
       employee.software.some(sw => sw.name === softwareName)
     ).map(employee => ({
-      name: employee.name,
-      licenseType: employee.software.find(sw => sw.name === softwareName)?.licenseType || "",
-      cost: employee.software.find(sw => sw.name === softwareName)?.cost || 0
+      name: employee.name
     }));
   };
 
@@ -402,7 +400,7 @@ export const PlatformLook: React.FC = () => {
                           animate={{ y: 0 }}
                           transition={{ duration: 0.4, delay: 0.1 }}
                         >
-                          <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Total Software</div>
+                          <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Total Softwares</div>
                           <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-1">156</div>
                           <div className="text-xs text-green-600 flex items-center">
                             <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -417,8 +415,8 @@ export const PlatformLook: React.FC = () => {
                           animate={{ y: 0 }}
                           transition={{ duration: 0.4, delay: 0.2 }}
                         >
-                          <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Active Licenses</div>
-                          <div className="text-3xl font-bold text-yellow-500 mb-1">82</div>
+                          <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Total Number of Employees</div>
+                          <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-1">82</div>
                           <div className="text-xs text-gray-500 dark:text-gray-400 flex items-center">
                             <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
@@ -432,13 +430,10 @@ export const PlatformLook: React.FC = () => {
                           animate={{ y: 0 }}
                           transition={{ duration: 0.4, delay: 0.3 }}
                         >
-                          <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Monthly Cost</div>
-                          <div className="text-3xl font-bold text-green-500 mb-1">€14.5k</div>
-                          <div className="text-xs text-red-500 flex items-center">
-                            <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                            </svg>
-                            5% since last month
+                          <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Company Risk</div>
+                          <div className="text-3xl font-bold text-green-500 mb-1">Low</div>
+                          <div className="text-xs flex items-center">
+                            Current risk: 20%
                           </div>
                         </motion.div>
                       </div>
@@ -451,21 +446,14 @@ export const PlatformLook: React.FC = () => {
                           transition={{ duration: 0.5, delay: 0.3 }}
                         >
                           <div className="flex justify-between mb-2">
-                            <div className="text-sm text-gray-600 dark:text-gray-400">Average Cost per Employee</div>
-                            <svg className="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">Total malware blocked</div>
                           </div>
-                          <div className="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-2">€42.30</div>
+                          <div className="text-3xl font-bold text-red-600 dark:text-red-400 mb-2">6</div>
                           <div className="flex justify-between items-center">
                             <div className="text-xs text-gray-600 dark:text-gray-400">
-                              Per employee / month
+                              Number of malicious apps blocked
                             </div>
                             <div className="text-xs text-blue-600 dark:text-blue-400 flex items-center">
-                              <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                              </svg>
-                              8% since last month
                             </div>
                           </div>
                         </motion.div>
@@ -477,21 +465,15 @@ export const PlatformLook: React.FC = () => {
                           transition={{ duration: 0.5, delay: 0.4 }}
                         >
                           <div className="flex justify-between mb-2">
-                            <div className="text-sm text-gray-600 dark:text-gray-400">Total Number of Employees</div>
-                            <svg className="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">Employees Hours Saved</div>
                           </div>
-                          <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">342</div>
+                          <div className="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">42 Hours</div>
                           <div className="flex justify-between items-center">
                             <div className="text-xs text-gray-600 dark:text-gray-400">
-                              Active employees
+                              An average of:
                             </div>
                             <div className="text-xs text-green-600 dark:text-green-400 flex items-center">
-                              <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                              </svg>
-                              3% since last month
+                            ∼700€ this month
                             </div>
                           </div>
                         </motion.div>
@@ -522,6 +504,85 @@ export const PlatformLook: React.FC = () => {
                           </div>
                         </motion.div>
                       </div>
+                      
+                      <motion.div 
+                        className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 mb-4"
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                      >
+                        <div className="flex justify-between items-center mb-4">
+                          <div className="font-medium text-gray-800 dark:text-white">Software Vulnerability Management</div>
+                          <span className="px-2 py-1 text-xs bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-400 rounded-full">
+                            2 Critical Issues
+                          </span>
+                        </div>
+                        <div className="space-y-2">
+                          {[
+                            { 
+                              software: "Adobe Creative Cloud", 
+                              version: "2023.4.0",
+                              cve: "CVE-2023-12345",
+                              severity: "Critical",
+                              description: "Remote code execution vulnerability",
+                              discovered: "2 hours ago",
+                              status: "Not patched"
+                            },
+                            { 
+                              software: "Brave Browser", 
+                              version: "2023.4.0",
+                              cve: "CVE-2023-67890",
+                              severity: "Critical",
+                              description: "Memory corruption vulnerability",
+                              discovered: "1 day ago",
+                              status: "Patch available"
+                            },
+                            { 
+                              software: "Slack", 
+                              version: "4.29.149",
+                              cve: "CVE-2023-54321",
+                              severity: "Medium",
+                              description: "Information disclosure vulnerability",
+                              discovered: "3 days ago",
+                              status: "Patched"
+                            }
+                          ].map((item, idx) => (
+                            <div key={idx} className="flex items-start p-3 hover:bg-gray-50 dark:hover:bg-gray-700/30 rounded-lg border border-gray-100 dark:border-gray-700">
+                              <div className={`h-8 w-8 rounded-md flex items-center justify-center text-lg mr-3`}>
+                                
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex justify-between">
+                                  <div>
+                                    <span className="font-medium text-gray-800 dark:text-white text-sm">{item.software}</span>
+                                    <span className="ml-2 text-xs text-gray-500 dark:text-gray-400">v{item.version}</span>
+                                  </div>
+                                  <span className="text-xs text-gray-500 dark:text-gray-400">{item.discovered}</span>
+                                </div>
+                                <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                                  {item.cve} - {item.description}
+                                </div>
+                                <div className="flex justify-between items-center mt-2">
+                                  <span className={`text-xs px-2 py-1 rounded-full ${
+                                    item.status === "Not patched"
+                                      ? "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-400"
+                                      : item.status === "Patch available"
+                                      ? "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-400"
+                                      : "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400"
+                                  }`}>
+                                    {item.status}
+                                  </span>
+                                  {item.status !== "Patched" && (
+                                    <button className="text-xs text-primary-600 dark:text-primary-400 hover:underline">
+                                      Update now
+                                    </button>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </motion.div>
                       
                       <motion.div 
                         className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4"
@@ -603,7 +664,7 @@ export const PlatformLook: React.FC = () => {
                             <tr>
                               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Name</th>
                               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Version</th>
-                              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Installations</th>
+                              <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Installations</th>
                               <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Action</th>
                             </tr>
                           </thead>
@@ -651,7 +712,7 @@ export const PlatformLook: React.FC = () => {
                                       )}
                                     </span>
                                   </td>
-                                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{software.users.length}</td>
+                                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400 text-center">{software.users.length}</td>
                                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                     <div className="flex justify-end space-x-2">
                                       <button 
@@ -890,8 +951,6 @@ export const PlatformLook: React.FC = () => {
                                       <thead className="bg-gray-100 dark:bg-gray-800">
                                         <tr>
                                           <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400">Employee</th>
-                                          <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400">License type</th>
-                                          <th className="px-4 py-2 text-right text-xs font-medium text-gray-500 dark:text-gray-400">Monthly cost</th>
                                         </tr>
                                       </thead>
                                       <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
@@ -905,32 +964,8 @@ export const PlatformLook: React.FC = () => {
                                                 {employee.name}
                                               </div>
                                             </td>
-                                            <td className="px-4 py-2 text-gray-800 dark:text-gray-300">
-                                              <span className={`px-2 py-1 text-xs rounded-full ${
-                                                employee.licenseType === "No license" 
-                                                  ? "bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-300" 
-                                                  : "bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200"
-                                              }`}>
-                                                {employee.licenseType}
-                                              </span>
-                                            </td>
-                                            <td className="px-4 py-2 text-right font-medium">
-                                              {employee.cost > 0 ? (
-                                                <span className="text-green-600 dark:text-green-400">€{employee.cost.toFixed(2)}</span>
-                                              ) : (
-                                                <span className="text-gray-500 dark:text-gray-400">-</span>
-                                              )}
-                                            </td>
                                           </tr>
                                         ))}
-                                        <tr className="bg-gray-50 dark:bg-gray-800/70">
-                                          <td colSpan={2} className="px-4 py-2 text-right font-medium text-gray-800 dark:text-white">
-                                            Total monthly cost:
-                                          </td>
-                                          <td className="px-4 py-2 text-right font-bold text-green-600 dark:text-green-400">
-                                            €{findEmployeesWithSoftware(license.name).reduce((total, emp) => total + emp.cost, 0).toFixed(2)}
-                                          </td>
-                                        </tr>
                                       </tbody>
                                     </table>
                                   </div>
@@ -976,9 +1011,8 @@ export const PlatformLook: React.FC = () => {
                           <thead className="bg-gray-50 dark:bg-gray-900">
                             <tr>
                               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Employee Name</th>
-                              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Number of installed softwares</th>
-                              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Number of licenses</th>
-                              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Cost</th>
+                              <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Number of installed softwares</th>
+                              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Status</th>
                             </tr>
                           </thead>
                           <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
@@ -1007,14 +1041,17 @@ export const PlatformLook: React.FC = () => {
                                       </svg>
                                     </div>
                                   </td>
-                                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400 text-center">
                                     {employee.software.length}
                                   </td>
-                                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
-                                    {employee.software.filter(sw => sw.licenseType !== "No license").length}
-                                  </td>
-                                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600 dark:text-green-400">
-                                    €{calculateTotalCost(employee.software)}
+                                  <td className="px-6 py-4 whitespace-nowrap text-sm">
+                                    <span className={`px-2 py-1 text-xs rounded-full ${
+                                      employee.active 
+                                        ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400"
+                                        : "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-400"
+                                    }`}>
+                                      {employee.active ? "Active" : "Inactive"}
+                                    </span>
                                   </td>
                                 </motion.tr>
                                 {expandedEmployeeRow === index && (
@@ -1025,7 +1062,7 @@ export const PlatformLook: React.FC = () => {
                                     transition={{ duration: 0.2 }}
                                     className="bg-gray-50 dark:bg-gray-800/50"
                                   >
-                                    <td colSpan={4} className="px-6 py-4">
+                                    <td colSpan={3} className="px-6 py-4">
                                       <div className="space-y-4">
                                         <div>
                                           <div className="text-sm font-medium text-gray-900 dark:text-white mb-2">
@@ -1037,8 +1074,6 @@ export const PlatformLook: React.FC = () => {
                                                 <tr>
                                                   <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400">Software</th>
                                                   <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400">Version</th>
-                                                  <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400">License type</th>
-                                                  <th className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400">Monthly cost</th>
                                                 </tr>
                                               </thead>
                                               <tbody className="divide-y divide-gray-200 dark:divide-gray-600">
@@ -1046,32 +1081,8 @@ export const PlatformLook: React.FC = () => {
                                                   <tr key={swIndex} className="text-sm">
                                                     <td className="px-4 py-2 text-gray-800 dark:text-gray-300">{sw.name}</td>
                                                     <td className="px-4 py-2 text-gray-800 dark:text-gray-300">{sw.version}</td>
-                                                    <td className="px-4 py-2 text-gray-800 dark:text-gray-300">
-                                                      <span className={`px-2 py-1 text-xs rounded-full ${
-                                                        sw.licenseType === "No license" 
-                                                          ? "bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-300" 
-                                                          : "bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200"
-                                                      }`}>
-                                                        {sw.licenseType}
-                                                      </span>
-                                                    </td>
-                                                    <td className="px-4 py-2 font-medium">
-                                                      {sw.cost > 0 ? (
-                                                        <span className="text-green-600 dark:text-green-400">€{sw.cost.toFixed(2)}</span>
-                                                      ) : (
-                                                        <span className="text-gray-500 dark:text-gray-400">-</span>
-                                                      )}
-                                                    </td>
                                                   </tr>
                                                 ))}
-                                                <tr className="bg-gray-50 dark:bg-gray-800/70">
-                                                  <td colSpan={3} className="px-4 py-2 text-right font-medium text-gray-800 dark:text-white">
-                                                    Total monthly:
-                                                  </td>
-                                                  <td className="px-4 py-2 font-bold text-green-600 dark:text-green-400">
-                                                    €{calculateTotalCost(employee.software)}
-                                                  </td>
-                                                </tr>
                                               </tbody>
                                             </table>
                                           </div>

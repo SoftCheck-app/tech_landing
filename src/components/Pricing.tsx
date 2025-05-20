@@ -152,7 +152,7 @@ const Pricing = () => {
     {
       name: 'Small Company',
       price: '4,99€',
-      period: 'month per employee',
+      period: 'month per employee + IVA',
       description: '',
       badge: '',
       starting: true,
